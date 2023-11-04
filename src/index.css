@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.task--btn {
+	@apply font-bold text-base border rounded-md px-3 py-2 border-[#61DAFB] hover:bg-[#61DAFB] hover:text-black transition-colors duration-[250ms];
+}
+
+.input-label {
+	@apply block my-1 font-semibold;
+}
+
+.input-group {
+	@apply my-3;
+}
+
+.input-group > input {
+	@apply rounded-md border px-3.5 py-2 w-full text-black focus:outline-none border-[#61dafb];
+}
+
+.temp-group > input {
+	@apply rounded-md border px-3.5 py-2 w-full text-black focus:outline-none border-[#61dafb] text-4xl mt-3;
+}
+
+.temp-label {
+	@apply font-semibold text-base;
+}
+
+.required-field {
+	@apply text-red-500;
+}
+
+.error {
+	@apply text-sm text-red-500 font-bold mt-1;
+}
+
+/* theme switcher */
+
+.checkbox {
+	@apply absolute opacity-0;
+}
+
+.checkbox-label {
+	@apply flex items-center justify-between cursor-pointer p-[5px] relative rounded-[50px] h-[26px] w-[50px] bg-[#61DAFB];
+}
+
+.checkbox-label .ball {
+	@apply bg-[#61dafb] border-[8px] border-black w-[22px] h-[22px] absolute left-[2px] top-[2px] rounded-[50%] transition-transform duration-200 ease-linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+	@apply transform translate-x-[24px];
+}
+
+/* spinner */
+.spinner {
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

@@ -1,6 +1,7 @@
 import { useThemeContext } from "../contexts/ThemeContext";
 import { useTaskContext } from "../contexts/TaskContext";
 import { FaMoon, FaSun } from "react-icons/fa6";
+import reactLogo from "../assets/react.svg";
 
 const Navbar = () => {
 	const { themeStyle, mode, setMode } = useThemeContext();
@@ -17,7 +18,7 @@ const Navbar = () => {
 				<div className="flex items-center justify-between">
 					<header className="hidden lg:block">
 						<a href="/" className="flex items-center gap-x-1">
-							<img src="/src/assets/react.svg" alt="" className="w-auto" />
+							<img src={reactLogo} alt="" className="w-auto" />
 							<span className="font-bold text-xl text-[#61DAFB] ">React</span>
 						</a>
 					</header>

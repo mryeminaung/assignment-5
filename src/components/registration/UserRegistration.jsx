@@ -89,12 +89,12 @@ const UserRegistration = () => {
 	};
 
 	return (
-		<div className="h-full flex items-center justify-center">
+		<div className="container min-h-screen mx-auto h-full py-32 flex items-center justify-center">
 			{showForm && (
 				<form
 					method="post"
 					onSubmit={(e) => handleValidationAndSubmit(e)}
-					className="rounded-md w-[500px] px-5 py-3 border border-[#61dafb] shadow-sm shadow-[#61dafb80]"
+					className="rounded-md w-[85%] md:w-[500px] px-5 py-3 border border-[#61dafb] shadow-sm shadow-[#61dafb80]"
 					style={{ backgroundColor: theme.bg }}
 				>
 					{/* username input field */}

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.box {
+	@apply border border-red-500;
+}
+
 .task--btn {
 	@apply font-bold text-base border rounded-md px-3 py-2 border-[#61DAFB] hover:bg-[#61DAFB] hover:text-black transition-colors duration-[250ms];
 }

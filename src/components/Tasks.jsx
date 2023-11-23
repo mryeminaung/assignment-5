@@ -1,9 +1,9 @@
 import { useTaskContext } from "../contexts/TaskContext";
 import { useThemeContext } from "../contexts/ThemeContext";
 import { UserContextProvider } from "../contexts/UserContext";
-
+import { TodoContextProvider } from "../contexts/TodoContext";
 import Welcome from "./Welcome";
-import TodoList from "./todo/TodoList";
+import Todo from "./todo/Todo";
 import UserRegistration from "./registration/UserRegistration";
 import TempConverter from "./temp/TempConverter";
 
@@ -13,9 +13,12 @@ const Tasks = () => {
 	const theme = mode === "light" ? themeStyle.light : themeStyle.dark;
 
 	return (
-		<main style={{ backgroundColor: theme.body, color: theme.text }} className="h-screen">
+		<main
+			style={{ backgroundColor: theme.body, color: theme.text }}
+			className="h-full min-h-screen"
+		>
 			{state.defaultPage && <Welcome />}
-			{state.todoPage && <TodoList />}
+			<TodoContextProvider>{state.todoPage && <Todo />}</TodoContextProvider>
 			<UserContextProvider>
 				{state.registationPage && <UserRegistration />}
 			</UserContextProvider>

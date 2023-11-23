@@ -23,12 +23,12 @@ const TempConverter = () => {
 	};
 
 	return (
-		<section className="container py-24 mx-auto h-full flex flex-col items-center justify-center">
+		<section className="container min-h-screen py-32 mx-auto h-full flex flex-col items-center justify-center">
 			<div
-				className="w-[600px] p-6 rounded-lg border shadow-sm shadow-[#61dafb80] border-[#61dafb]"
+				className="w-[80%] md:w-[600px] p-6 rounded-lg border shadow-sm shadow-[#61dafb80] border-[#61dafb]"
 				style={{ backgroundColor: theme.bg }}
 			>
-				<div className="flex items-center justify-between gap-x-5">
+				<div className="flex flex-col md:flex-row items-center justify-between gap-x-5">
 					<div className="temp-group">
 						<label htmlFor="celsius" className="temp-label">
 							Celsius <span className="text-[#61DAFB]">( °C )</span>
@@ -44,8 +44,8 @@ const TempConverter = () => {
 							}}
 						/>
 					</div>
-					<div className="temp-grou pt-10">
-						<FaArrowRightArrowLeft className="text-4xl" />
+					<div className="temp-grou py-5 md:pt-10">
+						<FaArrowRightArrowLeft className="text-4xl rotate-90 md:rotate-0" />
 					</div>
 					<div className="temp-group">
 						<label htmlFor="fahrenheit" className="temp-label">

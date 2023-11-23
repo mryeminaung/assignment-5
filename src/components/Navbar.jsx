@@ -6,11 +6,12 @@ import { useEffect, useState } from "react";
 
 const Navbar = () => {
 	const { themeStyle, mode, setMode } = useThemeContext();
-	const { dispatch } = useTaskContext();
-	const [type, setType] = useState("home");
+	const { state, dispatch } = useTaskContext();
+	const [type, setType] = useState(localStorage.getItem("type") || "home");
 	const theme = mode === "light" ? themeStyle.light : themeStyle.dark;
 
 	useEffect(() => {
+		localStorage.setItem("type", type);
 		type === "home" && dispatch({ type: "" });
 		type === "to-do" && dispatch({ type: "show_todo_page" });
 		type === "user-reg" && dispatch({ type: "show_registration_page" });
@@ -25,11 +26,17 @@ const Navbar = () => {
 			<nav className="px-5 md:px-2 container mx-auto py-5">
 				<div className="flex items-center justify-between">
 					<header className="hidden sm:block">
-						<a href="/" className="flex items-center gap-x-1">
+						<button
+							className="flex items-center gap-x-1"
+							onClick={() => {
+								dispatch({ type: "" });
+							}}
+						>
 							<img src={reactLogo} alt="" className="w-auto" />
 							<span className="font-bold text-xl text-[#61DAFB] ">React</span>
-						</a>
+						</button>
 					</header>
+
 					<button
 						className="hidden md:block task--btn"
 						onClick={() => {
@@ -62,6 +69,7 @@ const Navbar = () => {
 						value={type}
 						onChange={(e) => setType(e.target.value)}
 					>
+						<option value="home">Home</option>
 						<option value="to-do">To-do List</option>
 						<option value="user-reg">User Registration</option>
 						<option value="temp-convert">Temp Converter</option>
